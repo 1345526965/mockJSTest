@@ -17,6 +17,11 @@ import  bootstrapTable  from '../../static/data/muck'
     },
     mounted() {
       this.gettableInfo()
+      this.$axios.post('login',{username:"admin",password:"123456"}).then(res=>{
+        console.log('-----res---',res)
+      }).catch(error=>{
+        console.log('------error------',error)
+      })
     },
     methods: {
       /**
