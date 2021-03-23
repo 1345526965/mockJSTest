@@ -10,6 +10,7 @@
 import  bootstrapTable  from '../../static/data/muck'
   export default {
     name: "bootStrapTable",
+   
     data() {
       return {
         currPage: this.$route.params.pageFlag,
@@ -17,11 +18,27 @@ import  bootstrapTable  from '../../static/data/muck'
     },
     mounted() {
       this.gettableInfo()
-      this.$axios.post('login',{username:"admin",password:"123456"}).then(res=>{
-        console.log('-----res---',res)
+      // this.$axios.post('login',{username:"admin",password:"123456"}).then(res=>{
+      //   console.log('-----res---',res)
+      // }).catch(error=>{
+      //   console.log('------error------',error)
+      // })
+
+      // this.$axios.axiosPost('login',{username:"admin",password:"123456"})
+      // .then(res=>{
+      //       console.log('-----login---------',res)
+      //       localStorage.setItem("userInfo",JSON.stringify({token:res.data.data.token}) )
+      // }).catch(error=>{
+
+      // })
+
+      this.$axios.axiosGet('users',{pagenum:0,pagesize:10}).then(res=>{
+        console.log('------users-----',res)
       }).catch(error=>{
-        console.log('------error------',error)
+
       })
+
+
     },
     methods: {
       /**

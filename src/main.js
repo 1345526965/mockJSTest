@@ -2,11 +2,11 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import axios from  '../static/js/axios'
+import axiosTest from  '../static/js/axios/axiostest'
 import router from './router'
 
 Vue.config.productionTip = false
-Vue.prototype.$axios = axios
+Vue.prototype.$axiosTest = axiosTest
 /* eslint-disable no-new */
 
 //bootstrap table
@@ -18,8 +18,10 @@ import 'bootstrap-table/dist/bootstrap-table.min.js'
 import 'bootstrap-table/dist/locale/bootstrap-table-zh-CN.min.js'
 
 //axios
-Vue.use(axios)
-Vue.prototype.$axios = axios
+//request
+
+import request from '../static/js/axios/request'
+Vue.prototype.$axios = request
 
 new Vue({
   el: '#app',
